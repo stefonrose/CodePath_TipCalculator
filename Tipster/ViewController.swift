@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var tipSelect: UISegmentedControl!
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        billField.becomeFirstResponder()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +40,6 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)    }
     
     @IBAction func onTap(_ sender: Any) {
-        view.endEditing(true)
     }
 }
 
